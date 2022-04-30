@@ -1,3 +1,4 @@
+#Top to bottom the whole thing
 class Student:
     #* Class variables
     attending_at = "Rutgers University"
@@ -11,7 +12,8 @@ class Student:
         self.minor = minor
         self.age = age
         
-    @classmethod
+    @classmethod #? Second question -> run it as the Student (class)
+    #? python
     def set_university(cls, university):
         cls.attending_at = university
     
@@ -26,10 +28,10 @@ class Student:
             return 'Yes'
         return 'No'
     
-    def __repr__(self):
-        return "Student('{}''{}''{}''{}''{}')".format(self.name, self.year, self.age, self.fulltime, self.major)
+    def __repr__(self): 
+        return "Student('{}''{}''{}''{}''{}')".format(self.name, self.year, self.age, self.fulltime, self.major) # always use fstrings
     
-    def __str__(self):
+    def __str__(self): 
         return "Name: {} year: {} Major: {}".format(self.name, self.year, self.major) 
     
 class LA(Student): #argument is the parent class -> inheritance
@@ -56,18 +58,29 @@ class LA(Student): #argument is the parent class -> inheritance
             for student in self.students:
                 print(student.name)
                 
+def main():
+    pass
+# idea of main is kinda not necessary
+
+if __name__ == "__main__":
+
+# random_data = "Mike sophomore 20 False CompSci Undecided"
+# mike = Student.from_string(random_data)
+    william = Student('William Wu', 'Sopohmore', 20, 25, True)
+    print(william)
+
+    william.gpa = 3.5
+    print(william.gpa) 
+#Java already compliled: formatted already no more no less 
+# Python is at run time essentially ->Python is dynamic -> compliled at run time
 
 
-random_data = "Mike sophomore 20 False CompSci Undecided"
-mike = Student.from_string(random_data)
-william = LA('William Wu', 'Sopohmore', 20, 25, True)
+# Student.set_university('Drexel')
 
-Student.set_university('Drexel')
-
-william.show_students()
-print(mike)
-print(vars(william))
-print(dict.fromkeys(['bruh', 'heh']))
+# william.show_students()
+# print(mike)
+# print(vars(william))
+# print(dict.fromkeys(['bruh', 'heh']))
 
 # print(william)
 # print(Student.has_free_time('C'))
