@@ -1,4 +1,10 @@
 with open('adjlist.in', 'r') as f:
-    while f.readline()!= int:
-        print("true")
-    print(f.readline(), end = "")
+    lines = f.readlines()
+    
+    for line in lines:
+        print(line, end="")
+        # try:
+        #     #Todo do something 
+        #     pass
+        # except ValueError as e:
+        #     pass
